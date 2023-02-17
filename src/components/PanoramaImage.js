@@ -101,6 +101,13 @@ function PanoramaImage({ src, blr }) {
     return () => clearTimeout(timeout)
   }, [show])
 
+  // prevent context menu
+  React.useEffect(() => {
+    document.addEventListener("contextmenu", (e) => {
+      e.preventDefault();
+    });
+  }, []);
+
   return (
     <>
       {!isLoaded && <div className="blurred" style={{ backgroundImage: `url(${blr})` }}></div>}
