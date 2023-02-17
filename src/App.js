@@ -31,6 +31,7 @@ function App() {
   
   return (
     <AppContext.Provider value={value}>
+      <Menu />
       <Routes>
         <Route path={`/${base_url}`} element={<Tour />} /> 
         <Route path={`/${base_url}/:block`} element={<Tour />} />

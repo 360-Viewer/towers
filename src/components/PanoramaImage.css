@@ -57,5 +57,42 @@
     height: 100%;
     top: 0;
     left: 0;
-
 }
+
+.controls {
+    position: absolute;
+    bottom: 0;
+    width: calc(100% - 20px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    padding: 10px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(60, 60, 60, 0.600);
+}
+
+.buttons button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.buttons img {
+    width: 40px;
+    height: 40px;
+    margin: 0 10px;
+}
+
+.buttons img:hover {
+    opacity: 0.5;
+}
+
+
+
+
