@@ -1,4 +1,4 @@
-import React, {useRef} from "react";
+import React, {useEffect, useRef} from "react";
 import { ReactPhotoSphereViewer } from "react-photo-sphere-viewer";
 import "./PanoramaImage.css"
 import zoom_in from "../public/icons/zoom-in.svg";
@@ -17,7 +17,7 @@ const PSVImage = ({ src, setIsLoaded }) => {
   const handleLeftClick = () => {
     photoSphereRef.current.animate({
       yaw: yaw - 0.5,
-      pitch: 0,
+      pitch: photoSphereRef.current.getPosition().pitch,
       speed: '3rpm',
     }); 
     setYaw(yaw - 0.5);
@@ -26,7 +26,7 @@ const PSVImage = ({ src, setIsLoaded }) => {
   const handleRightClick = () => {
     photoSphereRef.current.animate({
       yaw: yaw + 0.5,
-      pitch: 0,
+      pitch: photoSphereRef.current.getPosition().pitch,
       speed: '3rpm',
     }); 
     setYaw(yaw + 0.5);
