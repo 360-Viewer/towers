@@ -49,4 +49,18 @@ export const panos = {
             "night-blur": require("../public/panos/c-block-l1-night-blur.jpg"),
         },
     },
+    "blurred": {
+        "a-block-l2-day": "../public/panos/a-block-l2-day-blur.jpg",
+        "a-block-l2-night": "../public/panos/a-block-l2-night-blur.jpg",
+        "a-block-l1-day": "../public/panos/a-block-l1-day-blur.jpg",
+        "a-block-l1-night": "../public/panos/a-block-l1-night-blur.jpg",
+        "b-block-l2-day": "../public/panos/b-block-l2-day-blur.jpg",
+        "b-block-l2-night": "../public/panos/b-block-l2-night-blur.jpg",
+        "b-block-l1-day": "../public/panos/b-block-l1-day-blur.jpg",
+        "b-block-l1-night": "../public/panos/b-block-l1-night-blur.jpg",
+        "c-block-l2-day": "../public/panos/c-block-l2-day-blur.jpg",
+        "c-block-l2-night": "../public/panos/c-block-l2-night-blur.jpg",
+        "c-block-l1-day": "../public/panos/c-block-l1-day-blur.jpg",
+        "c-block-l1-night": "../public/panos/c-block-l1-night-blur.jpg",
+    },
 }

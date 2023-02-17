@@ -8,7 +8,7 @@
     cursor: default;
     animation: blur 3s normal forwards;
     pointer-events: none;
-    z-index: 1;
+    z-index: 10;
 }
 
 @keyframes blur {
@@ -27,14 +27,14 @@
     height: 100%;
     top: 0;
     left: 0;
-    z-index: 1;
+    z-index: 10;
     cursor: default;
     background: no-repeat center center;
     background-size: cover;
 }
 
 .panorama {
-    z-index: 0;
+    z-index: 1;
     position: absolute;
     width: 100%;
     height: 100%;
@@ -49,7 +49,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 1;
+    z-index: 10;
     padding: 10px;
 }
 
