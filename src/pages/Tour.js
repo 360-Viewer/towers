@@ -11,13 +11,13 @@ function Tour() {
 
   useEffect(() => {
     if (level) {
-      navigate(`/${base_url}/${block}/${level}/day`);
+      navigate(`/${block}/${level}/day`);
     }
     else if (block) {
-      navigate(`/${base_url}/${block}/l2/day`);
+      navigate(`/${block}/l2/day`);
     }
     else {
-      navigate(`/${base_url}/a-block/l2/day`);
+      navigate(`/a-block/l2/day`);
     }
   }, [navigate]);
 

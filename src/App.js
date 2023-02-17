@@ -33,10 +33,10 @@ function App() {
     <AppContext.Provider value={value}>
       <Menu />
       <Routes>
-        <Route path={`/${base_url}`} element={<Tour />} /> 
-        <Route path={`/${base_url}/:block`} element={<Tour />} />
-        <Route path={`/${base_url}/:block/:level`} element={<Tour />} />
-        <Route path={`/${base_url}/:block/:level/:view`} element={<TourDetailed />} />
+        <Route path={`/`} element={<Tour />} /> 
+        <Route path={`/:block`} element={<Tour />} />
+        <Route path={`/:block/:level`} element={<Tour />} />
+        <Route path={`/:block/:level/:view`} element={<TourDetailed />} />
       </Routes>
     </AppContext.Provider>
   );

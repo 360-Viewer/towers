@@ -18,7 +18,7 @@ const LevelItem = ({ children }) => {
     }, [currentLevel, children]);
 
     function handleClick() {
-        navigate(`/${base_url}/${currentBlock}/${children.toLowerCase()}/${currentView}`);
+        navigate(`/${currentBlock}/${children.toLowerCase()}/${currentView}`);
     }
 
     return (
@@ -49,7 +49,7 @@ const BlockItem = ({ children }) => {
 
     function handleClick() {
         console.log(children);
-        navigate(`/${base_url}/${children === "A Blok" ? "a-block" : children === "B Blok" ? "b-block" : "c-block"}/${currentLevel}/${currentView}`);
+        navigate(`/${children === "A Blok" ? "a-block" : children === "B Blok" ? "b-block" : "c-block"}/${currentLevel}/${currentView}`);
     }
 
     return (
@@ -68,7 +68,7 @@ function Menu() {
     const { currentBlock, currentLevel, currentView } = useContext(AppContext);
 
     function handleViewClick() {
-        navigate(`/${base_url}/${currentBlock}/${currentLevel}/${currentView === "day" ? "night" : "day"}`);
+        navigate(`/${currentBlock}/${currentLevel}/${currentView === "day" ? "night" : "day"}`);
     }
     return (
         <>
