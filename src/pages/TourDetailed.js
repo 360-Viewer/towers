@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom'
 import { AppContext } from '../App';
 import PanoramaImage from '../components/PanoramaImage';
 import { panos } from '../public/constans';
+import { LazyLoadComponent } from 'react-lazy-load-image-component';
 
 function TourDetailed() {
   const { block, level, view } = useParams();
@@ -33,6 +34,9 @@ function TourDetailed() {
   return (
       <div style={{ width: "100%", height: "100%"}}>
         <ViewPanorama />
+        <LazyLoadComponent>
+          <ViewPanorama />
+        </LazyLoadComponent>
       </div>
   )
 }
