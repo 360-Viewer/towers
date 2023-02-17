@@ -8,7 +8,6 @@
     cursor: default;
     animation: blur 3s normal forwards;
     pointer-events: none;
-    /* make the overlay click-through */
     z-index: 1;
 }
 
@@ -76,7 +75,3 @@
 .buttons img:hover {
     opacity: 0.5;
 }
-
-
-
-
