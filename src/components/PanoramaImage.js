@@ -11,7 +11,6 @@ import autorotate from "../public/icons/autorotate.svg";
 const PSVImage = ({ src, setIsLoaded }) => {
   const photoSphereRef = useRef(null);
   const [yaw, setYaw] = React.useState(0); 
-  const [pitch, setPitch] = React.useState(0);
   const [zoom, setZoom] = React.useState(10);
 
   useEffect(() => {
@@ -23,6 +22,7 @@ const PSVImage = ({ src, setIsLoaded }) => {
   const handleLeftClick = () => {
     photoSphereRef.current.animate({
       yaw: yaw - 0.5,
+      pitch: 0,
       speed: '3rpm',
     }); 
     setYaw(yaw - 0.5);
@@ -31,6 +31,7 @@ const PSVImage = ({ src, setIsLoaded }) => {
   const handleRightClick = () => {
     photoSphereRef.current.animate({
       yaw: yaw + 0.5,
+      pitch: 0,
       speed: '3rpm',
     }); 
     setYaw(yaw + 0.5);

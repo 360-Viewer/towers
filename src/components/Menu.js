@@ -7,7 +7,6 @@ import { useNavigate } from "react-router-dom";
 import { base_url, panos } from "../public/constans";
 
 // const sun = require('../public/icons/sun.svg');
-
 const LevelItem = ({ children }) => {
     const navigate = useNavigate();
     const [isActive, setIsActive] = React.useState(false);
