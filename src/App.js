@@ -2,6 +2,8 @@ import React, { createContext, useEffect, useMemo } from 'react';
 import {Route, Routes } from 'react-router-dom';
 import TourDetailed from './pages/TourDetailed';
 import Tour from './pages/Tour';
+import Menu from './components/Menu';
+import { base_url } from './public/constans';
 
 export const AppContext = createContext();
 
@@ -30,8 +32,10 @@ function App() {
   return (
     <AppContext.Provider value={value}>
       <Routes>
-        <Route path="/tower_tour" element={<Tour />} /> 
-        <Route path="/tower_tour/:block/:level/:view" element={<TourDetailed />} />
+        <Route path={`/${base_url}`} element={<Tour />} /> 
+        <Route path={`/${base_url}/:block`} element={<Tour />} />
+        <Route path={`/${base_url}/:block/:level`} element={<Tour />} />
+        <Route path={`/${base_url}/:block/:level/:view`} element={<TourDetailed />} />
       </Routes>
     </AppContext.Provider>
   );

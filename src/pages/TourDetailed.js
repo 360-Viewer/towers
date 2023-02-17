@@ -1,6 +1,7 @@
 import React, { useContext, useEffect } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import { AppContext } from '../App';
+import Menu from '../components/Menu';
 import PanoramaImage from '../components/PanoramaImage';
 
 function TourDetailed() {
@@ -13,14 +14,19 @@ function TourDetailed() {
     setCurrentBlock(block);
     setCurrentLevel(level);
     setCurrentView(view);
-    navigate(`/tower_tour/${block}/${level}/${view}`);
   }, [block, level, view]);
+  
+  function ViewPanorama() {
+    return (
+      <PanoramaImage src={require(`../public/panos/${block}-${level}-${view}.jpg`)}
+                     blr={require(`../public/panos/${block}-${level}-${view}-blur.png`)} />
+    )
+  }
 
   return (
-    <div style={{width: "100%", height: "100%", top: 0, left: 0, position: "absolute"}}>
-      {/* <PanoramaImage src={require(`../public/images/${block}-${level}-${view}.jpg`)} /> */}
-      <PanoramaImage src={require(`../public/images/test.png`)} />
-
+    <div style={{ width: "100%", height: "100%"}}>
+      <Menu />
+      <ViewPanorama />
     </div>
   )
 }

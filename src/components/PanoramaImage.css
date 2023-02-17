@@ -1,0 +1,61 @@
+.blurred::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    cursor: default;
+    animation: blur 2s normal forwards;
+    pointer-events: none;
+    /* make the overlay click-through */
+    z-index: 1;
+
+    /* webkit */
+    -webkit-animation: blur 2s normal forwards;
+    -webkit-pointer-events: none;
+    -webkit-z-index: 100;
+
+}
+
+@keyframes blur {
+    from {
+        backdrop-filter: blur(10px);
+    }
+
+    to {
+        backdrop-filter: blur(0);
+    }
+}
+
+@-webkit-keyframes blur {
+    from {
+        -webkit-backdrop-filter: blur(10px);
+    }
+
+    to {
+        -webkit-backdrop-filter: blur(0);
+    }
+}
+
+.blurred {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    cursor: default;
+    background: no-repeat center center;
+    background-size: cover;
+}
+
+.panorama {
+    z-index: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+
+}

@@ -1,13 +1,24 @@
 import React, { useContext, useEffect } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import { AppContext } from '../App';
+import { base_url } from '../public/constans';
 
 function Tour() {
   const appContext = useContext(AppContext);
   const navigate = useNavigate();
+  const { block, level } = useParams();
+
 
   useEffect(() => {
-    navigate(`/tower_tour/${appContext.currentBlock}/${appContext.currentLevel}/${appContext.currentView}`);
+    if (level) {
+      navigate(`/${base_url}/${block}/${level}/day`);
+    }
+    else if (block) {
+      navigate(`/${base_url}/${block}/l2/day`);
+    }
+    else {
+      navigate(`/${base_url}/a-block/l2/day`);
+    }
   }, [navigate]);
 
   return (
