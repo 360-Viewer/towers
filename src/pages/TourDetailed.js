@@ -26,7 +26,7 @@ function TourDetailed() {
   function ViewPanorama() {
     return (
       <PanoramaImage src={panos[currentBlock][currentLevel][currentView]}
-                     blr={panos[currentBlock][currentLevel][currentView + "-blur-min"]}
+                     blr={panos[currentBlock][currentLevel][currentView + "-blur"]}
       />
     )
   }
