@@ -102,7 +102,7 @@ function PanoramaImage({ src, blr }) {
   React.useEffect(() => {
     const timeout = setTimeout(() => {
       setShow(true)
-    }, 1000)
+    }, 100)
 
     return () => clearTimeout(timeout)
   }, [show])
