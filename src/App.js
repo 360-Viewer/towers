@@ -1,9 +1,8 @@
-import React, { createContext, useEffect, useMemo } from 'react';
+import React, { createContext, useMemo } from 'react';
 import {Route, Routes } from 'react-router-dom';
 import TourDetailed from './pages/TourDetailed';
 import Tour from './pages/Tour';
 import Menu from './components/Menu';
-import { base_url } from './public/constans';
 
 export const AppContext = createContext();
 

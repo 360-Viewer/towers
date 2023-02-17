@@ -1,7 +1,6 @@
 import React, { useContext, useEffect } from 'react'
-import { useNavigate, useParams } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import { AppContext } from '../App';
-import Menu from '../components/Menu';
 import PanoramaImage from '../components/PanoramaImage';
 import { panos } from '../public/constans';
 
@@ -20,7 +19,7 @@ function TourDetailed() {
     if (view !== currentView) {
       setCurrentView(view);
     }
-  }, [block, level, view]);
+  }, [block, level, view, currentBlock, currentLevel, currentView, setCurrentBlock, setCurrentLevel, setCurrentView]);
 
   
   function ViewPanorama() {

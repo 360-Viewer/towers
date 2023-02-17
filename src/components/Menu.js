@@ -4,7 +4,7 @@ import styles from "./Menu.module.css"
 import sun from '../public/icons/sun.svg';
 import moon from '../public/icons/moon.svg';
 import { useNavigate } from "react-router-dom";
-import { base_url, panos } from "../public/constans";
+import { panos } from "../public/constans";
 
 // const sun = require('../public/icons/sun.svg');
 const LevelItem = ({ children }) => {

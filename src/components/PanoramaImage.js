@@ -1,4 +1,4 @@
-import React, {useEffect, useRef} from "react";
+import React, {useRef} from "react";
 import { ReactPhotoSphereViewer } from "react-photo-sphere-viewer";
 import "./PanoramaImage.css"
 import zoom_in from "../public/icons/zoom-in.svg";
@@ -7,17 +7,12 @@ import left from "../public/icons/left.svg";
 import right from "../public/icons/right.svg";
 import fullscreen from "../public/icons/fullscreen.svg";
 import autorotate from "../public/icons/autorotate.svg";
+import LazyLoad from 'react-lazyload';
 
 const PSVImage = ({ src, setIsLoaded }) => {
   const photoSphereRef = useRef(null);
   const [yaw, setYaw] = React.useState(0); 
   const [zoom, setZoom] = React.useState(10);
-
-  useEffect(() => {
-    if (!photoSphereRef.current) return;
-    
-    console.log(photoSphereRef.current);
-  }, [photoSphereRef]);
   
   const handleLeftClick = () => {
     photoSphereRef.current.animate({
@@ -109,7 +104,7 @@ function PanoramaImage({ src, blr }) {
 
   return (
     <>
-      {!isLoaded && <div className="blurred" style={{ backgroundImage: `url(${blr})` }}></div>}
+      {!isLoaded && <LazyLoad height={'100%'} width={'100%'} ><div className="blurred" style={{ backgroundImage: `url(${blr})` }}></div></LazyLoad>}
       {
         show && 
         <div className="panorama">

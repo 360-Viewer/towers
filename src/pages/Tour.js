@@ -1,10 +1,7 @@
-import React, { useContext, useEffect } from 'react'
+import React, { useEffect } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
-import { AppContext } from '../App';
-import { base_url } from '../public/constans';
 
 function Tour() {
-  const appContext = useContext(AppContext);
   const navigate = useNavigate();
   const { block, level } = useParams();
 
@@ -19,7 +16,7 @@ function Tour() {
     else {
       navigate(`/a-block/l2/day`);
     }
-  }, [navigate]);
+  }, [block, level, navigate]);
 
   return (
     <>
