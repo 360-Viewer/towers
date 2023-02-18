@@ -29,7 +29,7 @@ function TourDetailed() {
           panos[currentBlock][currentLevel][currentView] :
           panos[currentBlock][currentLevel][currentView + "-sd"]
       }
-                     blr={panos[currentBlock][currentLevel][currentView + "-blur"]}
+          blr={panos[currentBlock][currentLevel][currentView + "-blur"]}
       />
     )
   }

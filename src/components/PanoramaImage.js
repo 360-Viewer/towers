@@ -32,9 +32,7 @@ function PanoramaImage({ src, blr }) {
   const [show, setShow] = useState(false);
 
   const imageLoaded = () => {
-    setTimeout(() => {
       setShow(true);
-    }, 10);
   }
 
   return (

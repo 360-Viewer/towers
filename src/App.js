@@ -3,6 +3,7 @@ import {Route, Routes } from 'react-router-dom';
 import TourDetailed from './pages/TourDetailed';
 import Tour from './pages/Tour';
 import Menu from './components/Menu';
+import { panos } from './public/constans';
 
 export const AppContext = createContext();
 
@@ -39,10 +40,16 @@ function App() {
       e.preventDefault();
     });
   }, []);
-  
+
   return (
     <AppContext.Provider value={value}>
       <div onDragStart={(e) => e.preventDefault()}>
+        {console.log("here")}
+        {
+          Object.values(panos["blurred"]).map((item) => {
+            return <img src={item} style={{display: "none"}} />
+          })
+        }
         <Menu />
         <Routes>
           <Route path={`/`} element={<Tour />} /> 
