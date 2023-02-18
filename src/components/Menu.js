@@ -19,41 +19,36 @@ import sd from "../public/icons/sd-icon.svg";
 export const Controls = ({ photoSphereRef }) => {
     const appContext = useContext(AppContext);
     const { quality, setQuality } = appContext;
-    const [yaw, setYaw] = useState(0);
     const [zoom, setZoom] = useState(10);
   
     const handleLeftClick = () => {
         photoSphereRef.current.animate({
-        yaw: yaw - 0.5,
+        yaw: photoSphereRef.current.getPosition().yaw - 0.5,
         pitch: photoSphereRef.current.getPosition().pitch,
         speed: '3rpm',
         }); 
-        setYaw(yaw - 0.5);
     }
 
     const handleRightClick = () => {
         photoSphereRef.current.animate({
-        yaw: yaw + 0.5,
+        yaw: photoSphereRef.current.getPosition().yaw + 0.5,
         pitch: photoSphereRef.current.getPosition().pitch,
         speed: '3rpm',
         }); 
-        setYaw(yaw + 0.5);
     }
 
     const handleZoomIn = () => {
         photoSphereRef.current.animate({
-        zoom: zoom + 10,
+        zoom: photoSphereRef.current.getZoomLevel() + 10,
         speed: '3rpm',
         });
-        setZoom(zoom > 90 ? 100 : zoom + 10);
     }
 
     const handleZoomOut = () => {
         photoSphereRef.current.animate({
-        zoom: zoom - 10,
+        zoom: photoSphereRef.current.getZoomLevel() - 10,
         speed: '3rpm',
         });
-        setZoom(zoom < 10 ? 0 : zoom - 10);
     }
 
     return (

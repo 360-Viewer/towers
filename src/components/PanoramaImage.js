@@ -21,7 +21,7 @@ const PSVImage = ({ src, setIsLoaded }) => {
           // after 2 seconds set is loaded to true
           setTimeout(() => {
             setIsLoaded(true);
-          }, 2000);
+          }, 1900);
         }}
       ></ReactPhotoSphereViewer>
       <Controls photoSphereRef={photoSphereRef} />
