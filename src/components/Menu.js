@@ -19,7 +19,6 @@ import sd from "../public/icons/sd-icon.svg";
 export const Controls = ({ photoSphereRef }) => {
     const appContext = useContext(AppContext);
     const { quality, setQuality } = appContext;
-    const [zoom, setZoom] = useState(10);
   
     const handleLeftClick = () => {
         photoSphereRef.current.animate({
