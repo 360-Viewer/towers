@@ -9,6 +9,7 @@ const PSVImage = ({ src, setIsLoaded }) => {
   return (
     <>
       <ReactPhotoSphereViewer
+        containerClass="panorama"
         ref={photoSphereRef}
         loadingImg={null}
         loadingTxt={null}
@@ -21,7 +22,7 @@ const PSVImage = ({ src, setIsLoaded }) => {
           // after 2 seconds set is loaded to true
           setTimeout(() => {
             setIsLoaded(true);
-          }, 1900);
+          }, 2000);
         }}
       ></ReactPhotoSphereViewer>
       <Controls photoSphereRef={photoSphereRef} />
@@ -40,19 +41,9 @@ function PanoramaImage({ src, blr }) {
 
   return (
     <>
-      {
-        !isLoaded &&
-        <div className="blurred">
-          <img src={blr} alt="loading" onLoad={imageLoaded} />
-        </div>
-      }
-      {
-        show && 
-        <div className="panorama">
-          <PSVImage src={src} setIsLoaded={setIsLoaded} />
-        </div>
-      }
-      {!isLoaded && <Controls />}
+      { !isLoaded && <div className="blurred"> <img src={blr} alt="loading" onLoad={imageLoaded}/> </div> }
+      { show && <PSVImage src={src} setIsLoaded={setIsLoaded}/> }
+      { !isLoaded && <Controls /> }
     </>
   )
 }
