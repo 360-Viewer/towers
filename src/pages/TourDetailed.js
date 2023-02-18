@@ -38,6 +38,11 @@ function TourDetailed() {
     <div
       style={{ width: "100%", height: "100%", display: "flex", justifyContent: "center", alignItems: "center" }}
     >
+      {
+        Object.values(panos["blurred"]).map((item) => {
+          return <img src={item} style={{display: "none"}} />
+        })
+      }
       <ViewPanorama />
     </div>
   )
