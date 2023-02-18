@@ -77,6 +77,24 @@
     margin: 0 10px;
 }
 
+/* for tables button size */
+@media (max-width: 768px) {
+    .buttons img {
+        width: 36px;
+        height: 36px;
+        margin: 0 8px;
+    }
+}
+
+/* for mobile button size */
+@media (max-width: 480px) {
+    .buttons img {
+        width: 28px;
+        height: 28px;
+        margin: 0 6px;
+    }
+}
+
 .buttons img:hover {
     opacity: 0.5;
 }
