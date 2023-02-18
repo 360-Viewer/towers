@@ -35,10 +35,16 @@ const PSVImage = ({ src, setIsLoaded }) => {
 function PanoramaImage({ src, blr }) {
   const [isLoaded, setIsLoaded] = useState(false);
   const [show, setShow] = useState(false);
-
+  
   return (
     <>
-      { !isLoaded && <div className={styles.blurred}> <img src={blr} alt="loading" onLoad={() => setShow(true)} /> </div> }
+      {!isLoaded &&
+        <div className={styles.blurred}>
+          <img src={blr}
+            alt="loading"
+            onLoad={() => setShow(true)}
+          />
+        </div>}
       { show && <PSVImage src={src} setIsLoaded={setIsLoaded}/> }
       { !isLoaded && <Controls /> }
     </>

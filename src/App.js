@@ -3,6 +3,9 @@ import {Route, Routes } from 'react-router-dom';
 import TourDetailed from './pages/TourDetailed';
 import Tour from './pages/Tour';
 import Menu from './components/Menu';
+import Costum404 from './pages/Costum404';
+import Redirect404 from './pages/Redirect404';
+
 
 export const AppContext = createContext();
 
@@ -43,12 +46,13 @@ function App() {
   return (
     <AppContext.Provider value={value}>
       <div onDragStart={(e) => e.preventDefault()}>
-        <Menu />
         <Routes>
           <Route path={`/`} element={<Tour />} /> 
           <Route path={`/:block`} element={<Tour />} />
           <Route path={`/:block/:level`} element={<Tour />} />
-          <Route path={`/:block/:level/:view`} element={<TourDetailed />} />
+          <Route path={`/:block/:level/:view`} element={<><Menu /> <TourDetailed /></>} />
+          <Route path={`/404`} element={<Costum404 />} />
+          <Route path={`*`} element={<Redirect404 />} />
         </Routes>
       </div>
     </AppContext.Provider>
