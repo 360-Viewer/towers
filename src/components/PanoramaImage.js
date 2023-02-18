@@ -1,11 +1,7 @@
 import React, {useRef} from "react";
 import { ReactPhotoSphereViewer } from "react-photo-sphere-viewer";
 import "./PanoramaImage.css"
-
 import { Controls } from "./Menu";
-
-
-
 
 const PSVImage = ({ src, setIsLoaded }) => {
   const photoSphereRef = useRef(null);
