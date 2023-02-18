@@ -16,7 +16,6 @@ const PSVImage = ({ src, setIsLoaded }) => {
         src={src}
         defaultZoomLvl={10}
         navbar={false}
-        touchmoveTwoFingers={true}
         onReady={() => {
           setIsLoaded(true);
         }}
