@@ -6,7 +6,7 @@
     width: 100%;
     height: 100%;
     cursor: default;
-    animation: blur 3s normal forwards;
+    animation: blur 1.5s normal forwards;
     pointer-events: none;
     z-index: 10;
 }
@@ -45,6 +45,10 @@
     top: 0;
     left: 0;
     /* animation: hide 3s normal forwards; */
+}
+
+.hide {
+    animation: hide 3s normal forwards;
 }
 
 @keyframes hide {

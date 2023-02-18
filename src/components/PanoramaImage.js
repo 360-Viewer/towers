@@ -1,7 +1,9 @@
-import React, {useRef, useState} from "react";
+import React, {useEffect, useRef, useState} from "react";
 import { ReactPhotoSphereViewer } from "react-photo-sphere-viewer";
-import "./PanoramaImage.css"
+import { useLocation } from "react-router-dom";
+// import "./PanoramaImage.css"
 import { Controls } from "./Menu";
+import styles from "./PanoramaImage.module.css"
 
 const PSVImage = ({ src, setIsLoaded }) => {
   const photoSphereRef = useRef(null);
@@ -9,7 +11,7 @@ const PSVImage = ({ src, setIsLoaded }) => {
   return (
     <>
       <ReactPhotoSphereViewer
-        containerClass="panorama"
+        containerClass={styles.panorama}
         ref={photoSphereRef}
         loadingImg={null}
         loadingTxt={null}
@@ -22,7 +24,7 @@ const PSVImage = ({ src, setIsLoaded }) => {
           // after 2 seconds set is loaded to true
           setTimeout(() => {
             setIsLoaded(true);
-          }, 2000);
+          }, 1500);
         }}
       ></ReactPhotoSphereViewer>
       <Controls photoSphereRef={photoSphereRef} />
@@ -41,7 +43,7 @@ function PanoramaImage({ src, blr }) {
 
   return (
     <>
-      { !isLoaded && <div className="blurred"> <img src={blr} alt="loading" onLoad={imageLoaded}/> </div> }
+      { !isLoaded && <div className={styles.blurred}> <img src={blr} alt="loading" onLoad={imageLoaded}/> </div> }
       { show && <PSVImage src={src} setIsLoaded={setIsLoaded}/> }
       { !isLoaded && <Controls /> }
     </>
