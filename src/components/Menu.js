@@ -13,67 +13,76 @@ import left from "../public/icons/left.svg";
 import right from "../public/icons/right.svg";
 import fullscreen from "../public/icons/fullscreen.svg";
 import autorotate from "../public/icons/autorotate.svg";
+import hd from "../public/icons/hd-icon.svg";
+import sd from "../public/icons/sd-icon.svg";
 
 export const Controls = ({ photoSphereRef }) => {
-  const [yaw, setYaw] = useState(0); 
-  const [zoom, setZoom] = useState(10);
+    const appContext = useContext(AppContext);
+    const { quality, setQuality } = appContext;
+    const [yaw, setYaw] = useState(0);
+    const [zoom, setZoom] = useState(10);
   
-  const handleLeftClick = () => {
-    photoSphereRef.current.animate({
-      yaw: yaw - 0.5,
-      pitch: photoSphereRef.current.getPosition().pitch,
-      speed: '3rpm',
-    }); 
-    setYaw(yaw - 0.5);
-  }
+    const handleLeftClick = () => {
+        photoSphereRef.current.animate({
+        yaw: yaw - 0.5,
+        pitch: photoSphereRef.current.getPosition().pitch,
+        speed: '3rpm',
+        }); 
+        setYaw(yaw - 0.5);
+    }
 
-  const handleRightClick = () => {
-    photoSphereRef.current.animate({
-      yaw: yaw + 0.5,
-      pitch: photoSphereRef.current.getPosition().pitch,
-      speed: '3rpm',
-    }); 
-    setYaw(yaw + 0.5);
-  }
+    const handleRightClick = () => {
+        photoSphereRef.current.animate({
+        yaw: yaw + 0.5,
+        pitch: photoSphereRef.current.getPosition().pitch,
+        speed: '3rpm',
+        }); 
+        setYaw(yaw + 0.5);
+    }
 
-  const handleZoomIn = () => {
-    photoSphereRef.current.animate({
-      zoom: zoom + 10,
-      speed: '3rpm',
-    });
-    setZoom(zoom > 90 ? 100 : zoom + 10);
-  }
+    const handleZoomIn = () => {
+        photoSphereRef.current.animate({
+        zoom: zoom + 10,
+        speed: '3rpm',
+        });
+        setZoom(zoom > 90 ? 100 : zoom + 10);
+    }
 
-  const handleZoomOut = () => {
-    photoSphereRef.current.animate({
-      zoom: zoom - 10,
-      speed: '3rpm',
-    });
-    setZoom(zoom < 10 ? 0 : zoom - 10);
-  }
+    const handleZoomOut = () => {
+        photoSphereRef.current.animate({
+        zoom: zoom - 10,
+        speed: '3rpm',
+        });
+        setZoom(zoom < 10 ? 0 : zoom - 10);
+    }
 
-  return <div className={styles.controls}>
-    <div className={styles.buttons}>
-      <button onClick={handleLeftClick}>
-        <img src={left} alt="left" />
-      </button>
-      <button onClick={handleRightClick}>
-        <img src={right} alt="right" />
-      </button>
-      <button onClick={() => photoSphereRef.current.toggleAutorotate()}>
-        <img src={autorotate} alt="autorotate" />
-      </button>
-      <button onClick={handleZoomIn}>
-        <img src={zoom_in} alt="zoom-in" />
-      </button>
-      <button onClick={handleZoomOut}>
-        <img src={zoom_out} alt="zoom-out" />
-      </button>
-      <button onClick={() => { photoSphereRef.current.toggleFullscreen(); } }>
-        <img src={fullscreen} alt="fullscreen" />
-      </button>
-    </div>
-  </div>;
+    return (
+        <div className={styles.controls}>
+            <div className={styles.buttons}>
+                <button onClick={handleLeftClick}>
+                    <img src={left} alt="left" />
+                </button>
+                <button onClick={handleRightClick}>
+                    <img src={right} alt="right" />
+                </button>
+                <button onClick={() => photoSphereRef.current.toggleAutorotate()}>
+                    <img src={autorotate} alt="autorotate" />
+                </button>
+                <button onClick={handleZoomIn}>
+                    <img src={zoom_in} alt="zoom-in" />
+                </button>
+                <button onClick={handleZoomOut}>
+                    <img src={zoom_out} alt="zoom-out" />
+                </button>
+                <button onClick={() => { photoSphereRef.current.toggleFullscreen(); } }>
+                    <img src={fullscreen} alt="fullscreen" />
+                </button>
+                <button onClick={() => { setQuality(quality === "high" ? "low" : "high"); }}>
+                    <img src={quality === "high" ? hd : sd} alt="quality" />
+                </button>
+            </div>
+        </div>
+    )
 }
 
 //  --------- End Controls  ---------

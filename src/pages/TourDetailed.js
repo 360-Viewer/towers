@@ -7,7 +7,7 @@ import { panos } from '../public/constans';
 function TourDetailed() {
   const { block, level, view } = useParams();
   const appContext = useContext(AppContext);
-  const { currentBlock, setCurrentBlock, currentLevel, setCurrentLevel, currentView, setCurrentView } = appContext;
+  const { currentBlock, setCurrentBlock, currentLevel, setCurrentLevel, currentView, setCurrentView, quality } = appContext;
   
   useEffect(() => {
     if (block !== currentBlock) {
@@ -24,7 +24,11 @@ function TourDetailed() {
   
   function ViewPanorama() {
     return (
-      <PanoramaImage src={panos[currentBlock][currentLevel][currentView]}
+      <PanoramaImage src={
+        quality === "high" ?
+          panos[currentBlock][currentLevel][currentView] :
+          panos[currentBlock][currentLevel][currentView + "-sd"]
+      }
                      blr={panos[currentBlock][currentLevel][currentView + "-blur"]}
       />
     )

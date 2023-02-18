@@ -10,6 +10,7 @@ function App() {
   const [currentBlock, setCurrentBlock] = React.useState("a-block");
   const [currentLevel, setCurrentLevel] = React.useState("l2");
   const [currentView, setCurrentView] = React.useState("day");
+  const [quality, setQuality] = React.useState("high");
   
   const value = useMemo(() => ({
     currentBlock,
@@ -18,6 +19,8 @@ function App() {
     setCurrentLevel,
     currentView,
     setCurrentView,
+    quality,
+    setQuality,
   }), [
     currentBlock,
     setCurrentBlock,
@@ -25,6 +28,8 @@ function App() {
     setCurrentLevel,
     currentView,
     setCurrentView,
+    quality,
+    setQuality,
   ]);
 
   
