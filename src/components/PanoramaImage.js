@@ -34,7 +34,7 @@ function PanoramaImage({ src, blr }) {
   const imageLoaded = () => {
     setTimeout(() => {
       setShow(true);
-    }, 500);
+    }, 100);
   }
 
   return (
