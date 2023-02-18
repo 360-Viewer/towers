@@ -1,7 +1,5 @@
-import React, {useEffect, useRef, useState} from "react";
+import React, {useRef, useState} from "react";
 import { ReactPhotoSphereViewer } from "react-photo-sphere-viewer";
-import { useLocation } from "react-router-dom";
-// import "./PanoramaImage.css"
 import { Controls } from "./Menu";
 import styles from "./PanoramaImage.module.css"
 
@@ -17,11 +15,12 @@ const PSVImage = ({ src, setIsLoaded }) => {
         loadingTxt={null}
         width={"100%"}
         height={'100vh'}
+        // sphereCorrection={{pan: 0, tilt: 0, roll: 0}}
         src={src}
         defaultZoomLvl={10}
         navbar={false}
         onReady={() => {
-          // after 2 seconds set is loaded to true
+          // after 1.5 seconds, the image is considered loaded for animation purposes
           setTimeout(() => {
             setIsLoaded(true);
           }, 1500);
