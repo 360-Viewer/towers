@@ -7,6 +7,7 @@ import left from "../public/icons/left.svg";
 import right from "../public/icons/right.svg";
 import fullscreen from "../public/icons/fullscreen.svg";
 import autorotate from "../public/icons/autorotate.svg";
+import LazyLoad from 'react-lazy-load';
 
 const PSVImage = ({ src, setIsLoaded }) => {
   const photoSphereRef = useRef(null);
@@ -112,7 +113,12 @@ function PanoramaImage({ src, blr }) {
 
   return (
     <>
-      {!isLoaded && <div className="blurred" style={{ backgroundImage: `url(${blr})` }}></div>}
+      {/* {!isLoaded && <div className="blurred" style={{ backgroundImage: `url(${blr})` }}></div>} */}
+      {!isLoaded && <div className="blurred">
+        <LazyLoad>
+          <img src={blr} alt="loading" />
+        </LazyLoad>
+      </div>}
       {
         show && 
         <div className="panorama">
