@@ -18,7 +18,10 @@ const PSVImage = ({ src, setIsLoaded }) => {
         defaultZoomLvl={10}
         navbar={false}
         onReady={() => {
-          setIsLoaded(true);
+          // after 2 seconds set is loaded to true
+          setTimeout(() => {
+            setIsLoaded(true);
+          }, 2000);
         }}
       ></ReactPhotoSphereViewer>
       <Controls photoSphereRef={photoSphereRef} />

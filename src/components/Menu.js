@@ -129,7 +129,6 @@ const BlockItem = ({ children }) => {
     }, [children, currentBlock]);
 
     function handleClick() {
-        console.log(children);
         navigate(`/${children === "A Blok" ? "a-block" : children === "B Blok" ? "b-block" : "c-block"}/${currentLevel}/${currentView}`);
     }
 
