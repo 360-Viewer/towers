@@ -115,7 +115,7 @@ function PanoramaImage({ src, blr }) {
     <>
       {/* {!isLoaded && <div className="blurred" style={{ backgroundImage: `url(${blr})` }}></div>} */}
       {!isLoaded && <div className="blurred">
-        <LazyLoad height={'100vh'} width={'100%'}>
+        <LazyLoad height={'100vh'} width={'100%'} offset={0}>
           <img src={blr} alt="loading" />
         </LazyLoad>
       </div>}
