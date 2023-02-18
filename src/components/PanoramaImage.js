@@ -5,11 +5,12 @@ import { Controls } from "./Menu";
 
 const PSVImage = ({ src, setIsLoaded }) => {
   const photoSphereRef = useRef(null);
+
   return (
     <>
       <ReactPhotoSphereViewer
         ref={photoSphereRef}
-        loadingImg={''}
+        loadingImg={null}
         loadingTxt={null}
         width={"100%"}
         height={'100vh'}
@@ -30,27 +31,11 @@ function PanoramaImage({ src, blr }) {
   const [isLoaded, setIsLoaded] = React.useState(false);
   const [show, setShow] = React.useState(false);
 
-  // React.useEffect(() => {
-  //   const timeout = setTimeout(() => {
-  //     setShow(true)
-  //   }, 750)
-
-  //   return () => clearTimeout(timeout)
-  // }, [show])
-
   const imageLoaded = () => {
-    const timeout = setTimeout(() => {
-    }, 1000);
-    setShow(true);
-    return () => clearTimeout(timeout);
+    setTimeout(() => {
+      setShow(true);
+    }, 500);
   }
-
-  // prevent context menu
-  React.useEffect(() => {
-    document.addEventListener("contextmenu", (e) => {
-      e.preventDefault();
-    });
-  }, []);
 
   return (
     <>

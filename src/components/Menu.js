@@ -52,8 +52,8 @@ export const Controls = ({ photoSphereRef }) => {
     setZoom(zoom < 10 ? 0 : zoom - 10);
   }
 
-  return <div className="controls">
-    <div className="buttons">
+  return <div className={styles.controls}>
+    <div className={styles.buttons}>
       <button onClick={handleLeftClick}>
         <img src={left} alt="left" />
       </button>
@@ -143,7 +143,7 @@ function Menu() {
         navigate(`/${currentBlock}/${currentLevel}/${currentView === "day" ? "night" : "day"}`);
     }
     return (
-        <>
+        <div onDragStart={(e) => e.preventDefault()}>
             <div className={styles.verticalContainer} style={{ left: "8px", top: "8px" }}>
                 <button className={styles.viewButton} onClick={handleViewClick}>
                     <img
@@ -173,7 +173,7 @@ function Menu() {
                     })
                 }
             </div>
-        </>
+        </div>
     )
 }
     

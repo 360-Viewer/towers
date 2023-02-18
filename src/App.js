@@ -28,15 +28,24 @@ function App() {
   ]);
 
   
+  // prevent context menu (right click)
+  React.useEffect(() => {
+    document.addEventListener("contextmenu", (e) => {
+      e.preventDefault();
+    });
+  }, []);
+  
   return (
     <AppContext.Provider value={value}>
-      <Menu />
-      <Routes>
-        <Route path={`/`} element={<Tour />} /> 
-        <Route path={`/:block`} element={<Tour />} />
-        <Route path={`/:block/:level`} element={<Tour />} />
-        <Route path={`/:block/:level/:view`} element={<TourDetailed />} />
-      </Routes>
+      <div onDragStart={(e) => e.preventDefault()}>
+        <Menu />
+        <Routes>
+          <Route path={`/`} element={<Tour />} /> 
+          <Route path={`/:block`} element={<Tour />} />
+          <Route path={`/:block/:level`} element={<Tour />} />
+          <Route path={`/:block/:level/:view`} element={<TourDetailed />} />
+        </Routes>
+      </div>
     </AppContext.Provider>
   );
 }
