@@ -1,4 +1,4 @@
-import React, {useRef} from "react";
+import React, {useRef, useState} from "react";
 import { ReactPhotoSphereViewer } from "react-photo-sphere-viewer";
 import "./PanoramaImage.css"
 import { Controls } from "./Menu";
@@ -28,8 +28,8 @@ const PSVImage = ({ src, setIsLoaded }) => {
 
 
 function PanoramaImage({ src, blr }) {
-  const [isLoaded, setIsLoaded] = React.useState(false);
-  const [show, setShow] = React.useState(false);
+  const [isLoaded, setIsLoaded] = useState(false);
+  const [show, setShow] = useState(false);
 
   const imageLoaded = () => {
     setTimeout(() => {
